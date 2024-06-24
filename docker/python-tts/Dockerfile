@@ -28,4 +28,4 @@ RUN --mount=target=/mnt/build-context \
     apt-get remove -y $BUILD_DEPS && \
     rm -rf /var/cache/apk/* /root/.cache
 
-ENTRYPOINT /bin/bash
+ENTRYPOINT /usr/local/bin/tts
