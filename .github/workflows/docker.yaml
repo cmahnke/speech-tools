@@ -42,7 +42,7 @@ jobs:
         with:
           push: true
           context: .
-          file: docker/Dockerfile
+          file: docker/python-tts/Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/cmahnke/speech-tools:python-tts
