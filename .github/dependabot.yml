@@ -20,6 +20,8 @@ updates:
     directory: "/docker/python-tts/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "python"
     groups:
       docker:
         patterns:
@@ -28,6 +30,8 @@ updates:
     directory: "/docker/python-tts/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "numpy"
     groups:
       docker:
         patterns:
