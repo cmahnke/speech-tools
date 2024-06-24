@@ -17,6 +17,7 @@ RUN --mount=target=/mnt/build-context \
     cd $BUILD_DIR && \
     curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | bash -s -- -y && \
     . $HOME/.cargo/env && \
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu && \
 # Python TTS
 # Use `coqui-tts` instead of `TTS`, since it supports current Python
     pip install -r /mnt/build-context/docker/python-tts/requirements.txt && \
