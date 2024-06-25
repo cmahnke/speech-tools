@@ -46,6 +46,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/cmahnke/speech-tools:python-tts
+            ghcr.io/cmahnke/speech-tools:latest
 
   build_python_tts_models:
     name: Push python-tts Docker image to GitHub Packages
