@@ -10,6 +10,7 @@ ENV BUILD_DEPS="git wget cmake build-essential " \
     PIPER_GIT_REPO="https://github.com/rhasspy/piper.git" \
     PIPER_PHONEMIZE_GIT_REPO="https://github.com/rhasspy/piper-phonemize.git" \
     BUILD_DIR=/tmp/build \
+    INSTALL_DIR=/opt/piper \
     PATH="${PATH}:/opt/piper"
 
 # alsa-utils alsa-lib icu icu-data-full hwloc jack espeak-ng websocket++ openfst
@@ -18,13 +19,13 @@ RUN --mount=target=/mnt/build-context \
     apt-get update && \
     apt-get upgrade && \
     apt install -y $BUILD_DEPS $RUN_DEPS && \
-    mkdir -p $BUILD_DIR && \
+    mkdir -p $BUILD_DIR $INSTALL_DIR && \
     cd $BUILD_DIR && \
 ## Piper phonemize
 #    git clone --depth 1 --branch $PIPER_GIT_TAG $PIPER_PHONEMIZE_GIT_REPO && \
 #    cd piper-phonemize && \
 #    mkdir -p build && cd build && \
-#    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH_FLAG=/usr/glibc-compat/lib -DCMAKE_INSTALL_PREFIX=/opt/piper .. && \
+#    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH_FLAG=/usr/glibc-compat/lib .. && \
 #    make && \
 #    cd ../../ && \
 # Piper
@@ -32,7 +33,7 @@ RUN --mount=target=/mnt/build-context \
     #cp -dR piper-phonemize/build/install/* ./piper/
     cd piper && \
     mkdir -p build && cd build && \
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr .. && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR .. && \
     make && make install && \
     cd ../.. && \
 # Cleanup
