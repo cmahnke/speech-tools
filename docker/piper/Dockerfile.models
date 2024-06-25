@@ -19,6 +19,7 @@ RUN --mount=target=/mnt/build-context \
     git remote add -f origin https://huggingface.co/rhasspy/piper-voices && \
     git config core.sparsecheckout true && \
     echo "de/de_DE/thorsten_emotional/medium/*" >> .git/info/sparse-checkout && \
+    echo "de/de_DE/thorsten/high/*" >> .git/info/sparse-checkout && \
     git pull --depth=1 origin v1.0.0 && \
     find . -name '*.onnx*' -type f -print -exec mv {} .. \; && \
 # Cleanup
