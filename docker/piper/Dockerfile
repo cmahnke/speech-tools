@@ -41,4 +41,6 @@ RUN --mount=target=/mnt/build-context \
     apt-get remove -y $BUILD_DEPS && \
     rm -rf /root/.cache /var/lib/apt/lists/*
 
+WORKDIR ${INSTALL_DIR}
+
 ENTRYPOINT /opt/piper/piper

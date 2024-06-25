@@ -25,3 +25,5 @@ RUN --mount=target=/mnt/build-context \
     rm -rf $DATA_DIR  && \
     apt-get remove -y $BUILD_DEPS && \
     rm -rf /var/cache/apk/* /root/.cache /var/lib/apt/lists/*
+
+WORKDIR ${INSTALL_DIR}
