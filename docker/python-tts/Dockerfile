@@ -30,4 +30,4 @@ RUN --mount=target=/mnt/build-context \
 
 EXPOSE 5002
 
-ENTRYPOINT /usr/local/bin/tts
+ENTRYPOINT ["/usr/local/bin/tts"]

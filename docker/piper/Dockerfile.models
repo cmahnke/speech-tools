@@ -27,3 +27,5 @@ RUN --mount=target=/mnt/build-context \
     rm -rf /var/cache/apk/* /root/.cache /var/lib/apt/lists/*
 
 WORKDIR ${INSTALL_DIR}
+
+ENTRYPOINT ["/opt/piper/piper"]

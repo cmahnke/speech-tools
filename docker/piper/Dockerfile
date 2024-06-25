@@ -43,4 +43,4 @@ RUN --mount=target=/mnt/build-context \
 
 WORKDIR ${INSTALL_DIR}
 
-ENTRYPOINT /opt/piper/piper
+ENTRYPOINT ["/opt/piper/piper"]

@@ -22,3 +22,5 @@ RUN --mount=target=/mnt/build-context \
     rm -rf $BUILD_DIR  && \
     apt-get remove -y $BUILD_DEPS && \
     rm -rf /root/.cache /var/lib/apt/lists/*
+
+ENTRYPOINT ["/usr/local/bin/tts"]
