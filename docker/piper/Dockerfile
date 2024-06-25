@@ -39,6 +39,6 @@ RUN --mount=target=/mnt/build-context \
 # Cleanup
     rm -rf $BUILD_DIR  && \
     apt-get remove -y $BUILD_DEPS && \
-    rm -rf /var/cache/apk/* /root/.cache
+    rm -rf /root/.cache /var/lib/apt/lists/*
 
 ENTRYPOINT /opt/piper/piper

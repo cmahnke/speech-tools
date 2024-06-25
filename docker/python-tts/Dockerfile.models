@@ -20,4 +20,5 @@ RUN --mount=target=/mnt/build-context \
     cd / && \
 # Cleanup
     rm -rf $BUILD_DIR  && \
-    apt-get remove -y $BUILD_DEPS
+    apt-get remove -y $BUILD_DEPS && \
+    rm -rf /root/.cache /var/lib/apt/lists/*
