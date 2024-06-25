@@ -14,7 +14,7 @@ RUN --mount=target=/mnt/build-context \
     mkdir -p /root/.local/share/tts/ && \
     cd $BUILD_DIR && \
     grep -v '^#' /mnt/build-context/docker/python-tts/models.lst | xargs -L 1 wget && \
-    unzip *.zip && \
+    unzip '*.zip' && \
     rm *.zip && \
     mv * /root/.local/share/tts/ && \
     cd / && \
