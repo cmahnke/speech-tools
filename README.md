@@ -15,6 +15,12 @@ docker build -f docker/python-tts/Dockerfile .
 docker build -f docker/sherpa-onnx/Dockerfile .
 ```
 
+## `piper`
+
+```
+docker build -f docker/piper/Dockerfile .
+```
+
 # TODO
 
 - Provide models
