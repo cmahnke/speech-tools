@@ -3,14 +3,14 @@ FROM python:3.11-slim
 LABEL maintainer="cmahnke@gmail.com"
 LABEL org.opencontainers.image.source https://github.com/cmahnke/speech-tools
 
-ENV BUILD_DEPS="build-essential curl git-lfs libsndfile1-dev" \
+ENV BUILD_DEPS="build-essential curl git-lfs libsndfile1-dev py3-numpy-dev" \
     RUN_DEPS="espeak-ng libsndfile1" \
     SHERPA_ONNX_GIT_REPO="https://github.com/k2-fsa/sherpa-onnx" \
     BUILD_DIR=/tmp/build
 
 RUN --mount=target=/mnt/build-context \
     apt-get update && \
-    apt-get upgrade && \
+    apt-get upgrade -y && \
     apt install -y $BUILD_DEPS $RUN_DEPS && \
     pip install --upgrade pip && \
     mkdir -p $BUILD_DIR && \

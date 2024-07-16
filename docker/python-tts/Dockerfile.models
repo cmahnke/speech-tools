@@ -8,7 +8,7 @@ ENV BUILD_DEPS="wget unzip"
 # See https://github.com/coqui-ai/TTS/blob/dev/TTS/.models.json
 RUN --mount=target=/mnt/build-context \
     apt-get update && \
-    apt-get upgrade && \
+    apt-get upgrade -y && \
     apt install -y $BUILD_DEPS && \
     mkdir -p $BUILD_DIR && \
     mkdir -p /root/.local/share/tts/ && \
