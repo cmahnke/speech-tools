@@ -3,7 +3,7 @@ FROM python:3.11-slim
 LABEL maintainer="cmahnke@gmail.com"
 LABEL org.opencontainers.image.source https://github.com/cmahnke/speech-tools
 
-ENV BUILD_DEPS="build-essential curl git-lfs libsndfile1-dev py3-numpy-dev" \
+ENV BUILD_DEPS="build-essential curl git-lfs libsndfile1-dev" \
     RUN_DEPS="espeak-ng libsndfile1" \
     SHERPA_ONNX_GIT_REPO="https://github.com/k2-fsa/sherpa-onnx" \
     BUILD_DIR=/tmp/build
