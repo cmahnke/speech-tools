@@ -1,7 +1,7 @@
 FROM ghcr.io/cmahnke/speech-tools:python-tts
 
 LABEL maintainer="cmahnke@gmail.com"
-LABEL org.opencontainers.image.source https://github.com/cmahnke/speech-tools
+LABEL org.opencontainers.image.source="https://github.com/cmahnke/speech-tools"
 
 ENV BUILD_DEPS="wget unzip"
 

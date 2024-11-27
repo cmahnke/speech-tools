@@ -1,7 +1,7 @@
 FROM python:3.11-slim
 
 LABEL maintainer="cmahnke@gmail.com"
-LABEL org.opencontainers.image.source https://github.com/cmahnke/speech-tools
+LABEL org.opencontainers.image.source="https://github.com/cmahnke/speech-tools"
 
 ENV BUILD_DEPS="build-essential curl git-lfs libsndfile1-dev" \
     RUN_DEPS="espeak-ng libsndfile1" \
