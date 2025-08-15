@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM alpine:3.22
 
 ARG SHERPA_ONNX_GIT_TAG=v1.10.1
 
